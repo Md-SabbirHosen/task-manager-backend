@@ -4,6 +4,9 @@ const tasks = require("./routes/tasks");
 const connectDB = require("./db/connect");
 require("dotenv").config();
 
+// middlewares
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.status(200).send("Welcome to the home page!");
 });
