@@ -6,10 +6,7 @@ require("dotenv").config();
 
 // middlewares
 app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.status(200).send("Welcome to the home page!");
-});
+app.use(express.static("./public"));
 
 app.use("/api/v1/tasks", tasks);
 app.use("/api/v1/tasks/:id", tasks);
